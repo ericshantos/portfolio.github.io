@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: transparent;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.size {
+    width: 50%;
+    height: 100%;
+}
+
+.presentation {
+    background-color: pink;
+    position: fixed;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+main {
+    background-color: aqua;
+    margin-left: 50%;
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+article {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    background-color: lightgray;
+    color: black;
+    height: 100vh;
+    width: 100%;
+}
+
+.section-picture {
+    background-color: lightcoral;
+}
+
+.section-about {
+    background-color: lightblue;
+}
+
+.section-skills {
+    background-color: lightgreen;
+}
+
+.section-projects {
+    background-color: lightgoldenrodyellow;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow: auto; /* Permite rolagem no body em telas pequenas */
+        flex-direction: column; /* Organiza o layout em coluna para telas pequenas */
+    }
+
+    .size {
+        width: 100%;
+        height: 100%;
+    }
+
+    .presentation {
+        position: relative;
+    }
+
+    main {
+        margin-left: 0;
+        height: auto; /* Ajusta a altura para rolagem em telas pequenas */
+    }
+}
