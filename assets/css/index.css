@@ -83,10 +83,11 @@ header {
     transition: clip-path 0.5s ease-in-out;
 }
 
+
 .list {
     display: flex;
     position: absolute;
-    top: 25%;
+    top: 26%;
     opacity: 0;
     transform: translateX(50%);
     transition: transform 1s ease, opacity 1s ease;
@@ -346,26 +347,17 @@ section {
     text-align: center;
 }
 
-.skills-icons:hover {
-    transform: scale(1.2);
-    background-color: #30344c;
+.skills-icons:hover img {
+    opacity: 0;
 }
 
 .skills-icons:hover .skill-category {
     display: flex;
 }
 
-.skills-icons:hover img {
-    opacity: 0;
-}
-
-.grid-skills:hover .skills-icons {
-    filter: blur(4px);
-}
-
-.grid-skills:hover .skills-icons:hover {
-    filter: blur(0);
-    transform: scale(1.1);
+.skills-icons:hover {
+    transform: scale(1.2);
+    background-color: #30344c;
 }
 
 .skills-icons img{
@@ -516,6 +508,11 @@ footer a {
 
     .skills-icons {
         padding: 5px;
+    }
+
+    .skills-icons:active {
+        transform: scale(0);
+        background-color: transparent;
     }
 
     .skills-icons img{
