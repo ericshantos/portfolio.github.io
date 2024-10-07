@@ -298,12 +298,13 @@ section {
     background-color: lightblue;
 }
 
+/* Define o estilo da section e dos ícones como no exemplo */
 #section-skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:azure
+    background-color: azure;
 }
 
 .grid-skills {
@@ -322,16 +323,55 @@ section {
 
 .skills-icons {
     position: relative;
-    border: 2px solid gray;
+    display: flex;
+    border: 2px solid #30344c;
     border-radius: 30%;
     justify-items: center;
     align-items: center;
     padding: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.skill-category {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    font-size: smaller;
+    color: white;
+    width: 80%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skill-category h1 {
+    text-align: center;
+}
+
+.skills-icons:hover {
+    transform: scale(1.2);
+    background-color: #30344c;
+}
+
+.skills-icons:hover .skill-category {
+    display: flex;
+}
+
+.skills-icons:hover img {
+    opacity: 0;
+}
+
+.grid-skills:hover .skills-icons {
+    filter: blur(4px);
+}
+
+.grid-skills:hover .skills-icons:hover {
+    filter: blur(0);
+    transform: scale(1.1);
 }
 
 .skills-icons img{
     height: 100px;
     margin: 0;
+    transition: opacity 0.1s ease;
 }
 
 #section-projects {
@@ -467,6 +507,11 @@ footer a {
 
     .grid-skills > :last-child {
         display: none;
+    }
+
+    .skill-category {
+        font-size: x-small;
+        transform: translateX(5%);
     }
 
     .skills-icons {
