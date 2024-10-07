@@ -35,5 +35,3 @@ document.addEventListener('DOMContentLoaded', () => {
         presentationContent.classList.add('appear');
     }, 800);
 });
-
-  
