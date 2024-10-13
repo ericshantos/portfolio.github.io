@@ -22,6 +22,7 @@ links.forEach(link => {
 document.addEventListener('DOMContentLoaded', () => {
     const burguerCatalog = document.querySelector('.burguer-catalog');
     const colorFilm = document.getElementById('film');
+    const root = document.documentElement;
     const presentationContents = document.getElementsByClassName('kanit-font');
 
     const colorButtons = document.querySelectorAll('.btn-span-color');
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         burguerCatalog.style.backgroundColor = backgroundColor;
         colorFilm.style.backgroundColor = backgroundColor;
+        root.style.setProperty('--color-text-span', `${backgroundColor}`);
 
         // Itera sobre todos os elementos com a classe 'kanit-font'
         Array.from(presentationContents).forEach(element => {

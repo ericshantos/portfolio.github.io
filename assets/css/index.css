@@ -1,3 +1,10 @@
+:root {
+    --color-yellow: #fce38f;
+    --color-red: #fc8d8d;
+    --color-green: #8efcb5;
+    --color-text-span: #fce38f;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -45,7 +52,7 @@ header {
 }
 
 .burguer-catalog {
-    background-color: #fce38f;
+    background-color: var(--color-yellow);
     border-radius: 50%;
     padding: 10px ;
     cursor: pointer;
@@ -148,15 +155,15 @@ header {
 }
 
 #red {
-    background-color: #fc8d8d;
+    background-color: var(--color-red);
 }
 
 #yellow {
-    background-color: #fce38f;
+    background-color: var(--color-yellow);
 }
 
 #green {
-    background-color: #8efcb5;
+    background-color: var(--color-green);
 }
 
 .title {
@@ -217,27 +224,87 @@ input[type="checkbox"] {
     transition: width 0.5s ease-in-out;
 }
 
+.first-part {
+    font-size: x-large;
+}
+
 .presentation-content {
-    background-color: transparent;
     display: flex;
     flex-direction: column;
     opacity: 0;
-    gap: 1em;
+    background-color: transparent;
     transition: opacity 1s ease-in-out;
 }
 
 .presentation-content h1 {
-    color: #fce38f;
-    font-size: 2.5em;
-    font-weight: 415;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-yellow);
+    font-size: 4.5em;
+    font-weight: 500;
+    margin-bottom: 20px;
     transition: color 0.5s ease-in-out;
 }
 
 .presentation-content p {
-    color: #fce38f;
+    color: var(--color-yellow);
     font-size: 1.4em;
     font-weight: 400;
     transition: color 0.5s ease-in-out;
+}
+
+.animation-text span {
+    position: relative;
+}
+
+.animation-text span::before {
+    content: "";
+    color: var(--color-text-span);
+    animation: words 20s infinite;
+}
+
+.animation-text span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    right: -5px;
+    border-left: 2px solid var(--color-text-span);
+    animation: blink .8s infinite, typingWords 20s steps(20) infinite;
+    width: calc(100% + 10px);
+    background-color: #30344c;
+}
+
+@keyframes typingWords {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 10px);
+    }
+}
+
+@keyframes blink {
+    0% {
+        border-left: 2px solid #30344c;
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "estudante de Ciência da Computação";
+    }
+    21%, 40% {
+        content: "desenvolvedor python";
+    }
+    41%, 60% {
+        content: "programador web";
+    }
+    61%, 80% {
+        content: "facilitador de apredizagem";
+    }
+    81%, 100% {
+        content: "entusiasta de IA e Machine learning";
+    }
 }
 
 .presentation-paragrafh {
@@ -278,7 +345,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fce38f;
+    background-color: var(--color-yellow);
     mix-blend-mode: multiply;
     opacity: 1;
     pointer-events: none;
@@ -299,7 +366,6 @@ section {
     background-color: lightblue;
 }
 
-/* Define o estilo da section e dos ícones como no exemplo */
 #section-skills {
     display: flex;
     flex-direction: column;
